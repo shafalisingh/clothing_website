@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+       <form>
+           <input align="center" id="searchBox" type="text" name="searchQuery">
+       <div>
+		<input align="center" id="searchButton" type="submit" value="Search">
+       </div>
+	</form>
+    </div>
+<div>
+
+
+
+		<img id="logo" align="center" src= {{ url_for('static', filename='images/ee.jpg') }} />
+
+
+	   </div>
+
+   </div>
+ {% endblock %}

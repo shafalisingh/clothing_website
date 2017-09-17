@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Clothing for All</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+
+  </head>
+
+  <body>
+    <header>
+        <a class="link" href="/cart">
+        <img src={{url_for('static', filename='images/rr.jpg')}} id="cartIcon" , align="right" />
+            </a>
+          <strong><nav>
+        <img align="left" src={{url_for('static', filename='images/w.png')}} />
+      <div class="container">
+
+
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">login</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('search') }}">Search</a></li>
+            <li><a href="{{ url_for('trendy_Tops') }}">trendy_Tops</a></li>
+            <li><a href="{{ url_for('cart') }}">Your Cart</a></li>
+
+
+
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

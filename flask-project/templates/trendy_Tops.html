@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+<img id="logo"align="right" src= {{ url_for('static', filename='images/images.jfif') }} />
+<img id="logo"align="left" src= {{ url_for('static', filename='images/images.jfif') }} />
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header" align="center">Trendy Tops</h1>
+        </div>
+
+        <div class="tops">
+		<h2>Items</h2>
+		{% for data in image_names %}
+
+		<table>
+			<tr align="center" id="productName">
+				{% for row in data %}
+				<td>
+					{{row[1]}}
+				</td>
+				{% endfor %}
+			</tr>
+			<tr id="productImage">
+				{% for row in data %}
+				<td>
+						<img src={{ url_for('static', filename='uploads//' + row[4]) }}  />
+					</a>
+
+				</td>
+
+
+				{% endfor %}
+			</tr>
+			<tr >
+				{% for row in data %}
+				<td align="center">
+					Price: ${{row[2]}}
+				</td>
+
+
+				{% endfor %}
+					<tr id="Image" align="center">
+				{% for row in data %}
+				<td>
+
+					<div id="addToCart" align="center">
+					<a href="/addToCart?productId={{row[0]}}"><button class="add-button" type="submit">Add to Cart</button></a>
+					</div>
+
+				</td>
+
+				{% endfor %}
+			</tr>
+
+			<tr id="productDescription" align="center">
+				{% for row in data %}
+				<td>
+					{{row[3]}}
+				</td>
+				{% endfor %}
+			</tr>
+
+			</tr>
+		</table>
+		{% endfor %}
+	</div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
